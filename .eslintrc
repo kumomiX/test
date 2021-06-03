@@ -1,0 +1,5 @@
+{  
+  "rules": {
+    "react/self-closing-comp": "error"
+  }
+}

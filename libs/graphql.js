@@ -1,5 +1,5 @@
 import { GraphQLClient } from 'graphql-request'
-const endpoint = 'https://graphqlzero.almansi.me/api'
+const endpoint = 'https://api.k8s.sputnik.systems/query'
 
 export const client = new GraphQLClient(endpoint, {
   headers: {

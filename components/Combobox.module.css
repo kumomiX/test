@@ -1,0 +1,5 @@
+.input {
+  transition: background-color 200ms ease, color 200ms ease,
+    box-shadow 200ms ease, -webkit-box-shadow 200ms ease;
+  appearance: none;
+}

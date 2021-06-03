@@ -1,5 +1,6 @@
 import 'stop-runaway-react-effects/hijack'
 import 'tailwindcss/tailwind.css'
+import 'styles/globals.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -11,10 +12,12 @@ export default function MyApp({ Component, pageProps }) {
     queryClientRef.current = new QueryClient()
   }
 
+  const getLayout = Component.getLayout || ((page) => page)
+
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Component {...pageProps} />
+        {getLayout(<Component {...pageProps}></Component>)}
       </Hydrate>
       <ReactQueryDevtools />
     </QueryClientProvider>
