@@ -78,7 +78,7 @@ export default function SearchBox({ onFocus, ...props }) {
             <span>Error: {error.message}</span>
           ) : null}
 
-          {searchTerm.length > 3 ? (
+          {searchTerm.length >= 3 ? (
             data?.length < 1 ? (
               <span style={{ display: 'block', margin: 8 }}>
                 No results found

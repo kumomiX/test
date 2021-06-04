@@ -1,6 +1,6 @@
 import Button from 'components/Button'
 import Logo from 'components/Logo'
-import SearchBox from 'features/navbar/SearchBox'
+import SearchBox from 'features/__navbar/SearchBox'
 import { useState } from 'react'
 
 export default function Navbar({ ...props }) {

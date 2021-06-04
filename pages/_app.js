@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { Hydrate } from 'react-query/hydration'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useRef } from 'react'
+import { NavigationProvider } from 'features/navigation/use-navigation'
 
 export default function MyApp({ Component, pageProps }) {
   const queryClientRef = useRef()
@@ -17,7 +18,9 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <QueryClientProvider client={queryClientRef.current}>
       <Hydrate state={pageProps.dehydratedState}>
-        {getLayout(<Component {...pageProps}></Component>)}
+        <NavigationProvider>
+          {getLayout(<Component {...pageProps}></Component>)}
+        </NavigationProvider>
       </Hydrate>
       <ReactQueryDevtools />
     </QueryClientProvider>
