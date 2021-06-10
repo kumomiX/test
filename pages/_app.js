@@ -1,4 +1,4 @@
-import 'stop-runaway-react-effects/hijack'
+// import 'stop-runaway-react-effects/hijack'
 import 'tailwindcss/tailwind.css'
 import 'styles/globals.css'
 import { QueryClient, QueryClientProvider } from 'react-query'
@@ -6,8 +6,9 @@ import { Hydrate } from 'react-query/hydration'
 import { ReactQueryDevtools } from 'react-query/devtools'
 import { useRef } from 'react'
 import { NavigationProvider } from 'features/navigation/use-navigation'
+import { appWithTranslation } from 'next-i18next'
 
-export default function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
   const queryClientRef = useRef()
   if (!queryClientRef.current) {
     queryClientRef.current = new QueryClient()
@@ -26,3 +27,5 @@ export default function MyApp({ Component, pageProps }) {
     </QueryClientProvider>
   )
 }
+
+export default appWithTranslation(MyApp)

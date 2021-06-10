@@ -41,7 +41,7 @@ const NavLayout = (props) => {
         </div>
         <div className="flex-1 mx-auto mt-4">
           <Map />
-          <div className="z-50">{props.children}</div>
+          <div className="z-50 fixed top-0">32131231{props.children}</div>
         </div>
       </div>
     </>

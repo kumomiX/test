@@ -1,5 +1,6 @@
 import { getLayout } from 'components/NavLayout'
 import useNavigation from 'features/navigation/use-navigation'
+import { useTranslation } from 'next-i18next'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect } from 'react'
@@ -19,9 +20,10 @@ export default function OptionPage({ ...props }) {
     })
     // we can zoom here using setViewport from navigation context
   }, [])
+  const { t } = useTranslation()
   return (
     <div>
-      <h1>OptionPage</h1>
+      <h1>Option Page {t('hello')}</h1>
       <Link href="/">to home</Link>
     </div>
   )
